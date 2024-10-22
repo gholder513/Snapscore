@@ -25,9 +25,9 @@ if check_file:
 else:
     print("[WARNING] Config File Not Found. Creating Now...")
     config.add_section('HotKeys')
-    config.set('HotKeys', 'record', 'f')
-    config.set('HotKeys', 'start', 'r')
-    config.set('HotKeys', 'stop', 'd')
+    config.set('HotKeys', 'record', 'enter')
+    config.set('HotKeys', 'start', 'space')
+    config.set('HotKeys', 'stop', 'ctrl')
 
     time.sleep(1)
 
@@ -37,10 +37,6 @@ else:
         config.write(ConfigFile)
 
 config.read(file_path)
-HotKeyOBJ = config["HotKeys"]
-RecordHotkey = HotKeyOBJ["record"]
-StartHotkey = HotKeyOBJ["start"]
-StopHotkey = HotKeyOBJ["stop"]
 
 class SnapBot:
     def __init__(self):
@@ -259,13 +255,13 @@ positions_label.grid(row=0, column=0, pady=5, padx=5)
 positions_text = tk.Text(frame, height=10, width=20, font=("Arial", 10))
 positions_text.grid(row=1, column=0, pady=5, padx=5)
 
-record_button = ttk.Button(frame, text="Record Position (%s)" % RecordHotkey, command=toggle_auto_clicker)
+record_button = ttk.Button(frame, text="Record Position (enter)", command=toggle_auto_clicker)
 record_button.grid(row=2, column=0, pady=5, padx=5)
 
-start_stop_button = ttk.Button(frame, text="Start/Stop (%s)" % StartHotkey, command=start_stop_auto_clicker)
+start_stop_button = ttk.Button(frame, text="Start (space)", command=start_stop_auto_clicker)
 start_stop_button.grid(row=3, column=0, pady=5, padx=5)
 
-stop_button = ttk.Button(frame, text="Stop (%s)" % StopHotkey, command=stop_auto_clicker)
+stop_button = ttk.Button(frame, text="Stop (ctrl)", command=stop_auto_clicker)
 stop_button.grid(row=4, column=0, pady=5, padx=5)
 
 iterations_label = ttk.Label(frame, text="Number of Iterations:", font=("Arial", 12))
