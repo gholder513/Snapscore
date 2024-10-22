@@ -55,9 +55,9 @@ sudo python3 snapController.py
 
 #### record_global_clicks
 
-```http
-  This method gets the position of the mouse currently, and updates the GUI.
-```
+
+##### This method gets the position of the mouse currently, and updates the GUI.
+
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
@@ -65,9 +65,9 @@ sudo python3 snapController.py
 
 #### on_key_events
 
-```http
-  GET /api/items/${id}
-```
+ 
+##### This method triggers every time a key is pressed.
+
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
